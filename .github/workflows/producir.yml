@@ -31,9 +31,9 @@ jobs:
           [ -f modelos/voices-v1.0.bin ] || curl -sSL -o modelos/voices-v1.0.bin $base/voices-v1.0.bin
       - name: Renderizar guiones cambiados
         run: |
-          cambios=$(git diff --name-only HEAD~1 HEAD -- 'contenido/*/guion.yaml' 2>/dev/null || true)
+          cambios=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'contenido/*/guion.yaml' 2>/dev/null || true)
           [ -z "$cambios" ] && cambios=$(ls contenido/*/guion.yaml)
-          for g in $cambios; do python pipeline/producir.py "$(dirname "$g")"; done
+          for g in $cambios; do if [ -f "$g" ]; then python pipeline/producir.py "$(dirname "$g")" || exit 1; fi; done
       - uses: actions/upload-artifact@v4
         with:
           name: videos
