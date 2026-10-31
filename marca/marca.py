@@ -10,8 +10,8 @@ def icono(x, y, s):
     return g + '</g>'
 logo = f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
 <rect width="800" height="800" fill="{NAR}"/><circle cx="400" cy="400" r="330" fill="{NAR2}"/>
-{icono(195, 190, 1.0)}
-<text x="400" y="610" text-anchor="middle" font-family="Inter" font-weight="900" font-size="96" fill="{BL}">ASÍ LLEGA</text>
+{icono(195, 130, 1.0)}
+<text x="400" y="640" text-anchor="middle" font-family="Inter" font-weight="900" font-size="150" fill="{BL}">1 MIN</text>
 </svg>'''
 open("logo.svg","w").write(logo)
 W,H=2560,1440
@@ -21,7 +21,8 @@ banner = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" vi
 <rect x="0" y="{H/2-250}" width="{W}" height="500" fill="{AZUL}" opacity="0.92"/>
 <rect x="520" y="560" width="300" height="300" rx="40" fill="{NAR}"/>
 {icono(545, 570, 0.64)}
-<text x="870" y="725" font-family="Inter" font-weight="900" font-size="150" fill="{BL}">ASÍ LLEGA</text>
-<text x="876" y="815" font-family="Inter" font-weight="500" font-size="50" fill="#FFC9A6">Cómo se fabrica todo y cómo llega a tu casa</text>
+<text x="870" y="655" font-family="Inter" font-weight="900" font-size="112" fill="{BL}">LOGÍSTICA</text>
+<text x="870" y="770" font-family="Inter" font-weight="900" font-size="112" fill="{NAR}">EN 1 MINUTO</text>
+<text x="874" y="845" font-family="Inter" font-weight="500" font-size="44" fill="#FFC9A6">Comercio exterior y logística, explicados simple</text>
 </svg>'''
 open("banner.svg","w").write(banner)

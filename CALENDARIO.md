@@ -1,4 +1,4 @@
-# Calendario de contenido · Así Llega
+# Calendario de contenido · Logística en 1 Minuto
 
 Serie principal: **Logística en 1 minuto**. Un concepto técnico por Short, explicado como lo explicaría un profesor de comercio exterior, con un dato verificable y fuente en el guion.
 
