@@ -98,13 +98,32 @@ def capa(escena, idx, total, logo):
     d.rectangle([70, 250, W - 70, 258], fill=(255, 255, 255, 90))
     d.rectangle([70, 250, 70 + (W - 140) * (idx + 1) / total, 258], fill=AMARILLO)
     grande = escena.get("grande", "")
+    resaltar = escena.get("resaltar")
     tam = 190 if len(grande) <= 8 else 140 if len(grande) <= 14 else 105
     f = fuente("Black", tam)
-    lineas = envolver(d, grande, f, W - 160)
-    y = H * 0.40 - len(lineas) * tam * 1.05 / 2
-    for ln in lineas:
-        d.text((W / 2, y), ln, font=f, fill=AMARILLO, anchor="ma", stroke_width=8, stroke_fill=TINTA)
-        y += tam * 1.05
+    if resaltar and resaltar in grande:
+        # modo "código": una línea en blanco con la parte que se explica resaltada en color
+        while d.textlength(grande, font=f) > W - 120 and tam > 70:
+            tam -= 10
+            f = fuente("Black", tam)
+        y = H * 0.40 - tam / 2
+        i = grande.index(resaltar)
+        partes = [(grande[:i], BLANCO), (resaltar, AMARILLO), (grande[i + len(resaltar):], BLANCO)]
+        x = (W - d.textlength(grande, font=f)) / 2
+        for txt, color in partes:
+            if txt:
+                d.text((x, y), txt, font=f, fill=color, stroke_width=8, stroke_fill=TINTA)
+                x += d.textlength(txt, font=f)
+        # subrayado bajo la parte resaltada
+        x0 = (W - d.textlength(grande, font=f)) / 2 + d.textlength(grande[:i], font=f)
+        d.rectangle([x0, y + tam * 1.08, x0 + d.textlength(resaltar, font=f), y + tam * 1.08 + 14], fill=AMARILLO)
+        y += tam * 1.25
+    else:
+        lineas = envolver(d, grande, f, W - 160)
+        y = H * 0.40 - len(lineas) * tam * 1.05 / 2
+        for ln in lineas:
+            d.text((W / 2, y), ln, font=f, fill=AMARILLO, anchor="ma", stroke_width=8, stroke_fill=TINTA)
+            y += tam * 1.05
     chico = escena.get("chico", "")
     if chico:
         fc = fuente("Bold", 58)
@@ -172,7 +191,7 @@ def main(carpeta):
             # video real de stock (licencia libre), recortado a vertical, con la capa de texto encima
             capa(esc, i, len(escenas), logo).save(png)
             clip = bajar(esc["clip"], os.path.join(RAIZ, "cache", "clips"))
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-i", clip, "-i", png,
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-ss", str(esc.get("desde", 0)), "-i", clip, "-i", png,
                             "-filter_complex",
                             f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},"
                             f"eq=brightness=-0.06:saturation=1.15,setsar=1[v];[v][1:v]overlay=0:0",

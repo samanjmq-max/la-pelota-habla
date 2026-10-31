@@ -1,0 +1,71 @@
+titulo: "¿Qué significan las letras de un contenedor? 📦🔤"
+formato: short
+serie: "Logística en 1 minuto"
+voz: em_alex
+velocidad: 1.1
+pausa: 0.25
+estado: piloto          # piloto -> aprobado -> publicado
+escenas:
+  - grande: "¿QUÉ DICE?"
+    chico: "El código de todo contenedor del mundo"
+    narracion: "Todo contenedor del mundo tiene pintado un código. Si sabés leerlo, sabés de quién es y qué tipo de contenedor es."
+    clip: https://videos.pexels.com/video-files/15187012/15187012-hd_1920_1080_30fps.mp4
+  - grande: "MSKU 123456 5"
+    resaltar: "MSK"
+    chico: "El dueño, registrado en el BIC"
+    narracion: "Las primeras tres letras son el dueño, registrado en el BIC, una oficina internacional con sede en París. MSK, por ejemplo, es Maersk."
+    clip: https://videos.pexels.com/video-files/11801939/11801939-hd_1080_1920_30fps.mp4
+  - grande: "MSKU 123456 5"
+    resaltar: "U"
+    chico: "U: contenedor · J: equipo desmontable · Z: chasis"
+    narracion: "La cuarta letra dice qué es. U es contenedor de carga, J es un equipo desmontable y Z es un remolque o chasis."
+    clip: https://videos.pexels.com/video-files/11336230/11336230-hd_720_1280_30fps.mp4
+  - grande: "MSKU 123456 5"
+    resaltar: "123456"
+    chico: "Número de serie"
+    narracion: "Después vienen seis números: el número de serie, como la patente del contenedor."
+    clip: https://videos.pexels.com/video-files/13372582/13372582-hd_1280_720_60fps.mp4
+  - grande: "MSKU 123456 5"
+    resaltar: "5"
+    chico: "Dígito de control: detecta errores de tipeo"
+    narracion: "Y el último número, aparte, es el dígito de control. Se calcula con todo lo anterior: si alguien tipea mal un solo carácter, el código ya no cierra."
+    clip: https://videos.pexels.com/video-files/15187012/15187012-hd_1920_1080_30fps.mp4
+    desde: 4
+  - grande: "22G1"
+    resaltar: "2"
+    chico: "Primer número: el largo. 2 = 20 pies · 4 = 40 pies"
+    narracion: "Debajo hay otro código, el de tamaño y tipo. El primer número es el largo: dos es de veinte pies y cuatro, de cuarenta."
+    clip: https://videos.pexels.com/video-files/11801939/11801939-hd_1080_1920_30fps.mp4
+  - grande: "45G1"
+    resaltar: "5"
+    chico: "Segundo número: la altura. 5 = High Cube"
+    narracion: "El segundo número es la altura. Dos es la estándar, de ocho pies y seis pulgadas. Cinco es High Cube: un pie más alto, ideal para carga liviana y voluminosa."
+    clip: https://videos.pexels.com/video-files/11336230/11336230-hd_720_1280_30fps.mp4
+    desde: 4
+  - grande: "45G1"
+    resaltar: "G1"
+    chico: "G: carga general · R: refrigerado"
+    narracion: "Y el final es el tipo. G es carga general; R, refrigerado, el famoso reefer."
+    clip: https://videos.pexels.com/video-files/13372582/13372582-hd_1280_720_60fps.mp4
+    desde: 5
+  - grande: "AHORA SABÉS"
+    chico: "Logística en 1 minuto · Seguinos"
+    narracion: "La próxima vez que veas un contenedor, ya sabés leerlo. Seguí Así Llega y aprendé logística en un minuto."
+    clip: https://videos.pexels.com/video-files/15187012/15187012-hd_1920_1080_30fps.mp4
+    desde: 7
+descripcion: |
+  Cómo leer el código de un contenedor según la norma ISO 6346: dueño (código BIC), categoría (U, J, Z), número de serie, dígito de control y el código de tamaño y tipo (22G1, 45G1, 45R1).
+
+  El ejemplo MSKU 123456 5 tiene un dígito de control válido.
+
+  Imágenes de stock: Cyriac von Czapiewski, Mike Hongkong 2, Glenn Langhorst y FÁBIO REIS DE ABREU (Pexels).
+
+  #Logistica #ComercioExterior #Contenedores #ISO6346 #Shorts
+fuentes:
+  - "ISO 6346 (Freight containers — Coding, identification and marking)"
+  - https://www.bic-code.org/
+creditos:
+  - https://www.pexels.com/video/containers-on-a-cargo-ship-at-port-15187012/
+  - https://www.pexels.com/video/vehicle-carrying-container-in-warehouse-11801939/
+  - https://www.pexels.com/video/container-ship-in-city-bay-11336230/
+  - https://www.pexels.com/video/container-ship-in-harbor-13372582/
