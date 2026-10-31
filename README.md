@@ -2,7 +2,7 @@
 
 Sistema de producción del canal [Logística en 1 Minuto](https://www.youtube.com/channel/UCYGlvUEFxyuPxuEhiAX9bbA): cómo se fabrica todo y cómo llega a tu casa, en español, sin rostro. (Antes: La Pelota Habla tv, canal de fútbol; el piloto quedó en `archivo/`.)
 
-**Propietario:** Maximiliano Quiroga. **Operación:** Claude.
+**Operación:** automatizada con Claude.
 
 ## Cómo funciona
 
