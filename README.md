@@ -9,7 +9,7 @@ Sistema de producción del canal [Logística en 1 Minuto](https://www.youtube.co
 1. **Tema y guion.** Claude investiga el tema (vidIQ, búsqueda web), verifica los datos y escribe `contenido/<nnn-tema>/guion.yaml` con sus fuentes.
 2. **Producción.** `pipeline/producir.py` genera la voz (Kokoro, gratis y de uso comercial), las placas visuales, los subtítulos y el video vertical 1080×1920.
 3. **Render automático.** Cada guion que se sube al repositorio se renderiza en GitHub Actions y queda como artefacto descargable por 14 días.
-4. **Publicación.** Pendiente de la autorización del canal (ver `REGISTRO.md`).
+4. **Publicación.** Metricool publica en YouTube, TikTok, Instagram y Pinterest con los videos de la rama `videos`.
 
 ## Reglas del canal
 
