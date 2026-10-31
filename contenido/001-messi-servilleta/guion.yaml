@@ -1,0 +1,33 @@
+titulo: "Messi casi no llega a ser Messi 😮"
+formato: short
+voz: em_alex
+velocidad: 1.08
+estado: piloto          # piloto -> aprobado -> publicado
+escenas:
+  - grande: "10 AÑOS"
+    chico: "Un médico le da una mala noticia"
+    narracion: "Messi casi no llega a ser Messi. Con poco más de diez años, los médicos le detectaron un problema para crecer."
+  - grande: "HORMONA DEL CRECIMIENTO"
+    chico: "Inyecciones todos los días"
+    narracion: "Tenía un déficit de la hormona del crecimiento. La solución eran inyecciones, todos los días."
+  - grande: "US$ 900"
+    chico: "por mes"
+    narracion: "Y el tratamiento costaba cerca de novecientos dólares por mes. Imposible de sostener para su familia."
+  - grande: "NADIE PAGÓ"
+    chico: "Ni Newell's ni River se hicieron cargo"
+    narracion: "En Argentina, ni Newell's ni River se hicieron cargo del tratamiento."
+  - grande: "UNA SERVILLETA"
+    chico: "El primer contrato con el Barcelona"
+    narracion: "Hasta que el Barcelona lo vio jugar. Y Carles Rexach, su secretario técnico, firmó el primer compromiso en una servilleta de papel."
+  - grande: "13 AÑOS"
+    chico: "Se muda a España"
+    narracion: "El club pagó el tratamiento, y a los trece años Messi se mudó a España. El resto, ya lo conocés."
+  - grande: "SEGUINOS"
+    chico: "Más historias que nadie te contó"
+    narracion: "Seguí La Pelota Habla para más historias que nadie te contó."
+descripcion: |
+  Con poco más de 10 años, Messi tenía un déficit de la hormona del crecimiento. El tratamiento costaba cerca de US$ 900 por mes y su familia no podía pagarlo. Esta es la historia de cómo una servilleta cambió el fútbol.
+
+  #Messi #Futbol #Barcelona #HistoriasDelFutbol #Shorts
+fuentes:
+  - https://grupoanimal.mx/tecnologia/esto-costo-el-tratamiento-hormonal-para-lionel-messi-que-le-salvo-la-carrera

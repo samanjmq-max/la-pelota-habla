@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440">
+<rect width="2560" height="1440" fill="#0B5D3B"/>
+<g fill="none" stroke="#14704A" stroke-width="10">
+  <line x1="1280.0" y1="0" x2="1280.0" y2="1440"/>
+  <circle cx="1280.0" cy="720.0" r="330"/>
+  <rect x="-10" y="380" width="420" height="680"/>
+  <rect x="2150" y="380" width="420" height="680"/>
+</g>
+<rect x="0" y="460.0" width="2560" height="520" fill="#0B5D3B" opacity="0.85"/>
+<g transform="translate(450,490) scale(0.55)"><polygon points="270,530 170,680 380,595" fill="#ffffff" stroke="#111111" stroke-width="11.5" stroke-linejoin="round"/>
+<clipPath id="c"><circle cx="420" cy="380" r="230"/></clipPath>
+<circle cx="420" cy="380" r="230" fill="#ffffff"/>
+<g clip-path="url(#c)" stroke="#111111" stroke-width="8.1" stroke-linejoin="round">
+<polygon points="420.0,311.0 485.6,358.7 460.6,435.8 379.4,435.8 354.4,358.7" fill="#111111"/>
+<polygon points="420.0,223.6 354.4,175.9 379.4,98.8 460.6,98.8 485.6,175.9" fill="#111111"/>
+<line x1="420.0" y1="311.0" x2="420.0" y2="223.6"/>
+<polygon points="568.7,331.7 593.8,254.5 674.9,254.5 700.0,331.7 634.4,379.3" fill="#111111"/>
+<line x1="485.6" y1="358.7" x2="568.7" y2="331.7"/>
+<polygon points="511.9,506.5 593.0,506.5 618.1,583.7 552.5,631.4 486.9,583.7" fill="#111111"/>
+<line x1="460.6" y1="435.8" x2="511.9" y2="506.5"/>
+<polygon points="328.1,506.5 353.1,583.7 287.5,631.4 221.9,583.7 247.0,506.5" fill="#111111"/>
+<line x1="379.4" y1="435.8" x2="328.1" y2="506.5"/>
+<polygon points="271.3,331.7 205.6,379.3 140.0,331.7 165.1,254.5 246.2,254.5" fill="#111111"/>
+<line x1="354.4" y1="358.7" x2="271.3" y2="331.7"/>
+<line x1="485.6" y1="175.9" x2="593.8" y2="254.5"/>
+<line x1="634.4" y1="379.3" x2="593.0" y2="506.5"/>
+<line x1="486.9" y1="583.7" x2="353.1" y2="583.7"/>
+<line x1="247.0" y1="506.5" x2="205.6" y2="379.3"/>
+<line x1="246.2" y1="254.5" x2="354.4" y2="175.9"/>
+</g>
+<circle cx="420" cy="380" r="230" fill="none" stroke="#111111" stroke-width="11.5"/>
+</g>
+<text x="850" y="725" font-family="Inter" font-weight="900" font-size="112" fill="#FFFFFF" letter-spacing="2">LA PELOTA HABLA</text>
+<text x="854" y="805" font-family="Inter" font-weight="500" font-size="44" fill="#CFEFDF">Historias y datos del fútbol que nadie te contó</text>
+</svg>

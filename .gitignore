@@ -1,0 +1,4 @@
+modelos/
+contenido/*/salida/
+__pycache__/
+*.pyc
