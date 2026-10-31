@@ -3,8 +3,10 @@ name: Producir videos
 # La subida a YouTube se agrega cuando el propietario autorice el acceso al canal.
 on:
   push:
-    paths: ["contenido/**/guion.yaml", "pipeline/**"]
+    paths: ["contenido/**/guion.yaml", "pipeline/**", ".github/workflows/**"]
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -37,3 +39,15 @@ jobs:
           name: videos
           path: contenido/*/salida/
           retention-days: 14
+      - name: Guardar videos en la rama "videos"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p /tmp/v
+          for d in contenido/*/salida; do [ -f "$d/short.mp4" ] && cp "$d/short.mp4" "/tmp/v/$(basename "$(dirname "$d")").mp4"; done
+          git fetch origin videos 2>/dev/null || true
+          if git rev-parse --verify -q origin/videos >/dev/null; then git checkout -B videos origin/videos; else git checkout --orphan videos && git rm -rqf . ; fi
+          cp /tmp/v/*.mp4 .
+          git add ./*.mp4
+          git commit -m "Videos renderizados $(date -u +%F)" || exit 0
+          git push origin videos
