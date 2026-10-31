@@ -79,6 +79,51 @@ def placa(escena, idx, total, logo):
     return img
 
 
+def capa(escena, idx, total, logo):
+    """Capa transparente (marca, progreso y texto) para poner encima de un video real."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    # oscurecido arriba y en el centro para que el texto se lea sobre cualquier toma
+    sombra = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ds = ImageDraw.Draw(sombra)
+    for y in range(H):
+        alfa = 150 if y < 300 else int(110 * max(0, 1 - abs(y - H * 0.42) / (H * 0.30)))
+        ds.line([0, y, W, y], fill=(0, 0, 0, alfa))
+    img.alpha_composite(sombra)
+    d = ImageDraw.Draw(img)
+    img.paste(logo, (70, 110), logo)
+    d.text((70 + logo.width + 24, 128), "LA PELOTA HABLA", font=fuente("Black", 46), fill=BLANCO)
+    d.rectangle([70, 250, W - 70, 258], fill=(255, 255, 255, 90))
+    d.rectangle([70, 250, 70 + (W - 140) * (idx + 1) / total, 258], fill=AMARILLO)
+    grande = escena.get("grande", "")
+    tam = 190 if len(grande) <= 8 else 140 if len(grande) <= 14 else 105
+    f = fuente("Black", tam)
+    lineas = envolver(d, grande, f, W - 160)
+    y = H * 0.40 - len(lineas) * tam * 1.05 / 2
+    for ln in lineas:
+        d.text((W / 2, y), ln, font=f, fill=AMARILLO, anchor="ma", stroke_width=8, stroke_fill=TINTA)
+        y += tam * 1.05
+    chico = escena.get("chico", "")
+    if chico:
+        fc = fuente("Bold", 58)
+        y += 30
+        for ln in envolver(d, chico, fc, W - 200):
+            d.text((W / 2, y), ln, font=fc, fill=BLANCO, anchor="ma", stroke_width=5, stroke_fill=TINTA)
+            y += 74
+    return img
+
+
+def bajar(url, carpeta):
+    """Descarga un clip de stock (Pexels) una sola vez y lo guarda en caché."""
+    import hashlib, urllib.request
+    os.makedirs(carpeta, exist_ok=True)
+    destino = os.path.join(carpeta, hashlib.sha1(url.encode()).hexdigest()[:12] + ".mp4")
+    if not os.path.exists(destino):
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=120) as r, open(destino, "wb") as fh:
+            fh.write(r.read())
+    return destino
+
+
 def trozos(texto, n=3):
     palabras = texto.split()
     return [" ".join(palabras[i:i + n]) for i in range(0, len(palabras), n)]
@@ -118,13 +163,24 @@ def main(carpeta):
             srt.append((tt, tt + dp, p))
             tt += dp
         png = os.path.join(tmp, f"p{i}.png")
-        placa(esc, i, len(escenas), logo).save(png)
         mp4 = os.path.join(tmp, f"c{i}.mp4")
         frames = max(1, round(dur * FPS))
-        # zoom lento para que la placa no quede quieta
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", png, "-vf",
-                        f"scale={W*2}:{H*2},zoompan=z='min(1+0.0009*on,1.12)':d={frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS}",
-                        "-frames:v", str(frames), "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p", mp4], check=True)
+        if esc.get("clip"):
+            # video real de stock (licencia libre), recortado a vertical, con la capa de texto encima
+            capa(esc, i, len(escenas), logo).save(png)
+            clip = bajar(esc["clip"], os.path.join(RAIZ, "cache", "clips"))
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-i", clip, "-i", png,
+                            "-filter_complex",
+                            f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},"
+                            f"eq=brightness=-0.06:saturation=1.15,setsar=1[v];[v][1:v]overlay=0:0",
+                            "-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast",
+                            "-pix_fmt", "yuv420p", mp4], check=True)
+        else:
+            placa(esc, i, len(escenas), logo).save(png)
+            # zoom lento para que la placa no quede quieta
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", png, "-vf",
+                            f"scale={W*2}:{H*2},zoompan=z='min(1+0.0009*on,1.12)':d={frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS}",
+                            "-frames:v", str(frames), "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p", mp4], check=True)
         clips.append(mp4)
         t += dur
 
