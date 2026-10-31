@@ -3,8 +3,8 @@
 Uso:  python pipeline/producir.py contenido/<slug>
 Salida: contenido/<slug>/salida/short.mp4 (+ subtitulos.srt)
 
-Todo lo visual se genera acá (tipografía y formas propias): no usa fotos,
-clips ni música de terceros, para no tener reclamos de derechos.
+Usa solo placas propias o video de stock con licencia libre (Pexels): nada de
+clips de terceros con derechos. La marca (nombre, logo, colores) sale de canal.yaml.
 """
 import os, re, subprocess, sys, tempfile
 import numpy as np
@@ -16,7 +16,10 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FUENTES = os.path.join(RAIZ, "assets", "fuentes")
 MODELOS = os.environ.get("KOKORO_DIR", os.path.join(RAIZ, "modelos"))
 W, H, FPS = 1080, 1920, 30
-VERDE, VERDE2, BLANCO, AMARILLO, TINTA = (11, 93, 59), (17, 128, 79), (255, 255, 255), (255, 211, 77), (17, 17, 17)
+BLANCO, TINTA = (255, 255, 255), (17, 17, 17)
+CANAL = yaml.safe_load(open(os.path.join(RAIZ, "canal.yaml"), encoding="utf-8"))
+_rgb = lambda h: tuple(int(h.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
+VERDE, VERDE2, AMARILLO = _rgb(CANAL["colores"]["fondo"]), _rgb(CANAL["colores"]["fondo2"]), _rgb(CANAL["colores"]["acento"])
 
 
 def fuente(peso, tam):
@@ -55,7 +58,7 @@ def placa(escena, idx, total, logo):
     d.rectangle([W / 2 - 300, H - 330, W / 2 + 300, H + 10], outline=VERDE2, width=10)
     # marca arriba
     img.paste(logo, (70, 110), logo)
-    d.text((70 + logo.width + 24, 128), "LA PELOTA HABLA", font=fuente("Black", 46), fill=BLANCO)
+    d.text((70 + logo.width + 24, 128), CANAL["nombre"].upper(), font=fuente("Black", 46), fill=BLANCO)
     # barra de progreso
     d.rectangle([70, 250, W - 70, 258], fill=VERDE2)
     d.rectangle([70, 250, 70 + (W - 140) * (idx + 1) / total, 258], fill=AMARILLO)
@@ -91,7 +94,7 @@ def capa(escena, idx, total, logo):
     img.alpha_composite(sombra)
     d = ImageDraw.Draw(img)
     img.paste(logo, (70, 110), logo)
-    d.text((70 + logo.width + 24, 128), "LA PELOTA HABLA", font=fuente("Black", 46), fill=BLANCO)
+    d.text((70 + logo.width + 24, 128), CANAL["nombre"].upper(), font=fuente("Black", 46), fill=BLANCO)
     d.rectangle([70, 250, W - 70, 258], fill=(255, 255, 255, 90))
     d.rectangle([70, 250, 70 + (W - 140) * (idx + 1) / total, 258], fill=AMARILLO)
     grande = escena.get("grande", "")
@@ -140,7 +143,7 @@ def main(carpeta):
     salida = os.path.join(carpeta, "salida")
     os.makedirs(salida, exist_ok=True)
     tmp = tempfile.mkdtemp()
-    logo = Image.open(os.path.join(RAIZ, "marca", "logo-verde.png")).convert("RGBA").resize((96, 96))
+    logo = Image.open(os.path.join(RAIZ, CANAL["logo"])).convert("RGBA").resize((96, 96))
     mascara = Image.new("L", (96, 96), 0)
     ImageDraw.Draw(mascara).ellipse([0, 0, 95, 95], fill=255)
     logo.putalpha(mascara)

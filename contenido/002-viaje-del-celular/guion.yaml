@@ -1,0 +1,56 @@
+titulo: "El viaje secreto de tu celular ✈️📦"
+formato: short
+voz: em_alex
+velocidad: 1.08
+pausa: 0.3
+estado: piloto          # piloto -> aprobado -> publicado
+escenas:
+  - grande: "TU CELULAR"
+    chico: "Dio la vuelta al mundo"
+    narracion: "El celular que tenés en la mano dio la vuelta al mundo antes de llegar a vos."
+    clip: https://videos.pexels.com/video-files/8946986/8946986-hd_1080_2048_25fps.mp4
+  - grande: "LA FÁBRICA"
+    chico: "Miles de piezas, una línea de montaje"
+    narracion: "Todo empieza en una fábrica, muchas veces en China, donde miles de piezas se arman en una línea de montaje."
+    clip: https://videos.pexels.com/video-files/10416700/10416700-hd_1280_720_50fps.mp4
+  - grande: "30 DÍAS"
+    chico: "en barco, cruzando el océano"
+    narracion: "Casi todo lo que comprás cruza el océano en contenedores. En barco, el viaje puede tardar más de treinta días."
+    clip: https://videos.pexels.com/video-files/11336230/11336230-hd_720_1280_30fps.mp4
+  - grande: "EN AVIÓN"
+    chico: "Los celulares caros vuelan"
+    narracion: "Pero con los celulares de alta gama pasa algo distinto. Según expertos en logística, marcas como Apple los mandan en avión: llegan en pocos días."
+    clip: https://videos.pexels.com/video-files/11642475/11642475-hd_1080_1920_30fps.mp4
+  - grande: "¿POR QUÉ?"
+    chico: "Un mes en el mar es plata parada"
+    narracion: "¿Por qué pagar más? Porque un mes en el mar es plata parada, y un celular que no llega a tiempo es una venta perdida."
+    clip: https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4
+  - grande: "EL DEPÓSITO"
+    chico: "Aduana y centro de distribución"
+    narracion: "Al llegar pasa por la aduana y entra a un centro de distribución, donde se guarda, se prepara y se despacha."
+    clip: https://videos.pexels.com/video-files/16971219/16971219-hd_1080_1920_30fps.mp4
+  - grande: "TU PUERTA"
+    chico: "El último tramo"
+    narracion: "Y el último tramo, uno de los más caros de todo el viaje, es el que lo trae hasta tu puerta."
+    clip: https://videos.pexels.com/video-files/13456113/13456113-hd_720_1280_24fps.mp4
+  - grande: "ASÍ LLEGA"
+    chico: "Seguinos para más viajes"
+    narracion: "Así llega todo lo que usás. Seguinos y descubrí el viaje de las cosas."
+    clip: https://videos.pexels.com/video-files/15187012/15187012-hd_1920_1080_30fps.mp4
+descripcion: |
+  Tu celular viajó miles de kilómetros antes de llegar a tu mano: fábrica, contenedor, avión, aduana, depósito y el último tramo hasta tu puerta. ¿Sabías que muchos celulares de alta gama viajan en avión y no en barco?
+
+  Imágenes de stock: Kaboompics, Thanh Văn, Glenn Langhorst, Alireza Akhlaghi, Tima Miroshnichenko, Rolan Muradov, Mizuno K y Cyriac von Czapiewski (Pexels).
+
+  #Logistica #ComoSeFabrica #Celular #ComercioMundial #Shorts
+fuentes:
+  - https://flexport.com/blog/does-apple-ship-iphones-by-air-or-sea
+creditos:
+  - https://www.pexels.com/video/close-up-video-of-a-cellphone-8946986/
+  - https://www.pexels.com/video/production-line-machine-part-10416700/
+  - https://www.pexels.com/video/container-ship-in-city-bay-11336230/
+  - https://www.pexels.com/video/airplane-take-off-11642475/
+  - https://www.pexels.com/video/a-person-counting-money-6700011/
+  - https://www.pexels.com/video/racks-16971219/
+  - https://www.pexels.com/video/a-man-delivering-a-package-to-a-woman-13456113/
+  - https://www.pexels.com/video/containers-on-a-cargo-ship-at-port-15187012/

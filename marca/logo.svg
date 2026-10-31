@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<rect width="800" height="800" fill="#F26B1D"/><circle cx="400" cy="400" r="330" fill="#D9560E"/>
+<g transform="translate(195,190) scale(1.0)"><rect x="20" y="110" width="290" height="180" rx="18" fill="#FFFFFF"/><rect x="48" y="135" width="18" height="130" rx="6" fill="#0E2A47" opacity="0.85"/><rect x="90" y="135" width="18" height="130" rx="6" fill="#0E2A47" opacity="0.85"/><rect x="132" y="135" width="18" height="130" rx="6" fill="#0E2A47" opacity="0.85"/><rect x="174" y="135" width="18" height="130" rx="6" fill="#0E2A47" opacity="0.85"/><rect x="216" y="135" width="18" height="130" rx="6" fill="#0E2A47" opacity="0.85"/><rect x="258" y="135" width="18" height="130" rx="6" fill="#0E2A47" opacity="0.85"/><path d="M300 200 H360" stroke="#FFFFFF" stroke-width="34" stroke-linecap="round"/><path d="M335 150 L392 200 L335 250" fill="none" stroke="#FFFFFF" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="400" y="610" text-anchor="middle" font-family="Inter" font-weight="900" font-size="96" fill="#FFFFFF">ASÍ LLEGA</text>
+</svg>

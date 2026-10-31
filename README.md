@@ -1,6 +1,6 @@
-# La Pelota Habla tv
+# Así Llega
 
-Sistema de producción del canal [La Pelota Habla tv](https://www.youtube.com/channel/UCYGlvUEFxyuPxuEhiAX9bbA): historias y datos del fútbol en español, sin rostro.
+Sistema de producción del canal [Así Llega](https://www.youtube.com/channel/UCYGlvUEFxyuPxuEhiAX9bbA): cómo se fabrica todo y cómo llega a tu casa, en español, sin rostro. (Antes: La Pelota Habla tv, canal de fútbol; el piloto quedó en `archivo/`.)
 
 **Propietario:** Maximiliano Quiroga. **Operación:** Claude.
 
@@ -13,7 +13,7 @@ Sistema de producción del canal [La Pelota Habla tv](https://www.youtube.com/ch
 
 ## Reglas del canal
 
-- Nada de imágenes o clips de partidos, fotos de prensa ni música de terceros: todo lo visual se genera acá.
+- Solo video de stock con licencia libre (Pexels) o placas propias: nada de clips de terceros, fotos de prensa ni música con derechos.
 - Todo dato del guion lleva fuente en el campo `fuentes`.
 - Apto para toda la familia: sin insultos, apuestas ni violencia. El canal está marcado como "no creado para niños".
 - Sin pagos, contratos ni cambios de configuración de la cuenta sin autorización del propietario.
@@ -33,5 +33,5 @@ Sistema de producción del canal [La Pelota Habla tv](https://www.youtube.com/ch
 ```bash
 pip install -r requirements.txt
 # modelos de voz en ./modelos (ver .github/workflows/producir.yml)
-python pipeline/producir.py contenido/001-messi-servilleta
+python pipeline/producir.py contenido/002-viaje-del-celular
 ```
