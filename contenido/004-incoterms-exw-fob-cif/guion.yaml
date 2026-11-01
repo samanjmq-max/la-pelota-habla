@@ -1,0 +1,65 @@
+titulo: "Si el barco se hunde, ¿quién pierde? Incoterms EXW, FOB y CIF 🚢"
+formato: short
+serie: "Logística en 1 minuto"
+voz: em_alex
+velocidad: 1.1
+pausa: 0.25
+estado: publicado       # piloto -> aprobado -> publicado
+escenas:
+  - grande: "¿QUIÉN PIERDE?"
+    chico: "Si el barco se hunde en el camino"
+    narracion: "Si el barco se hunde, ¿quién pierde la mercadería? Lo dicen tres letras: el Incoterm."
+    clip: https://videos.pexels.com/video-files/10622135/10622135-hd_720_1280_30fps.mp4
+  - grande: "INCOTERMS® 2020"
+    resaltar: "2020"
+    chico: "Reglas de la Cámara de Comercio Internacional (ICC)"
+    narracion: "Son reglas de la Cámara de Comercio Internacional que marcan dónde pasa el riesgo."
+    clip: https://videos.pexels.com/video-files/11336230/11336230-hd_720_1280_30fps.mp4
+  - grande: "EXW"
+    resaltar: "EXW"
+    chico: "Ex Works: la carga se entrega en el local del vendedor, sin cargar"
+    narracion: "En EXW, el vendedor deja la carga lista en su local. Cargarla, exportarla y llevarla corre por el comprador."
+    clip: https://videos.pexels.com/video-files/20654625/20654625-hd_720_1280_30fps.mp4
+  - grande: "FOB"
+    resaltar: "FOB"
+    chico: "Free on Board: el riesgo pasa a bordo, en el puerto de carga"
+    narracion: "En FOB, el vendedor despacha la exportación y el riesgo pasa con la carga a bordo del barco."
+    clip: https://videos.pexels.com/video-files/10451891/10451891-hd_720_1280_30fps.mp4
+  - grande: "CIF"
+    resaltar: "CIF"
+    chico: "Cost, Insurance and Freight: flete + seguro mínimo (cláusula C)"
+    narracion: "En CIF, además, el vendedor paga el flete y el seguro hasta el puerto de destino."
+    clip: https://videos.pexels.com/video-files/6700011/6700011-hd_1080_1920_25fps.mp4
+  - grande: "RIESGO: A BORDO"
+    resaltar: "A BORDO"
+    chico: "En CIF el vendedor paga el viaje, pero el riesgo es del comprador"
+    narracion: "Pero el riesgo igual pasa a bordo, en origen. Si se hunde, pierde el comprador, que reclama al seguro."
+    clip: https://videos.pexels.com/video-files/10622135/10622135-hd_720_1280_30fps.mp4
+    desde: 5
+  - grande: "MIRÁ EL INCOTERM"
+    chico: "Logística en 1 minuto · Seguinos"
+    narracion: "Antes de cerrar una compra, mirá el Incoterm. Seguí Logística en 1 Minuto."
+    clip: https://videos.pexels.com/video-files/15187012/15187012-hd_1920_1080_30fps.mp4
+descripcion: |
+  ¿Quién pierde la mercadería si el barco se hunde? Lo define el Incoterm. Según las reglas Incoterms® 2020 de la ICC:
+  · EXW: el vendedor pone la carga a disposición en su local, sin cargarla; carga, exportación y transporte corren por cuenta del comprador.
+  · FOB: el vendedor despacha la exportación y el riesgo pasa cuando la carga está a bordo del barco en el puerto de embarque.
+  · CIF: el vendedor paga flete y seguro mínimo (cláusula C) hasta el puerto de destino, pero el riesgo pasa al comprador a bordo, en origen.
+
+  Dato extra: FOB y CIF son solo para transporte marítimo o fluvial. Para contenedores, la ICC recomienda FCA o CIP.
+
+  Imágenes de stock: Ivan Mudruk, Glenn Langhorst, Eric Skaggs, Tima Miroshnichenko y Cyriac von Czapiewski (Pexels).
+
+  #Logistica #ComercioExterior #Incoterms #FOB #CIF #Shorts
+fuentes:
+  - https://academy.iccwbo.org/incoterms/article/incoterms-2020-exw-or-fca/
+  - https://academy.iccwbo.org/incoterms/article/incoterms-2020-fca-or-fob/
+  - https://academy.iccwbo.org/incoterms/article/incoterms-2020-cip-or-cif/
+  - https://www.trade.gov/node/79
+creditos:
+  - https://www.pexels.com/video/industrial-ship-on-rough-sea-10622135/
+  - https://www.pexels.com/video/container-ship-in-city-bay-11336230/
+  - https://www.pexels.com/video/a-forklift-is-parked-in-front-of-a-building-20654625/
+  - https://www.pexels.com/video/container-ship-being-loaded-10451891/
+  - https://www.pexels.com/video/a-person-counting-money-6700011/
+  - https://www.pexels.com/video/containers-on-a-cargo-ship-at-port-15187012/
